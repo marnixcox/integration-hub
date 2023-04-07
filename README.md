@@ -26,7 +26,7 @@ This template utilizes the following Azure resources:
 1. Install Visual Studio Code
 1. Create a new folder and switch to it in the Terminal tab
 1. Run `azd login`
-1. Run `azd init -t https://github.com/marnixcox/shared-integration`
+1. Run `azd init -t https://github.com/marnixcox/integration-hub`
 
 Now the magic happens. The template contents will be downloaded into your project folder. 
 
