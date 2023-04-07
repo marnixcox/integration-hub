@@ -62,7 +62,7 @@ Resource group and all components will be created.
 
 <img src="assets/provision.png" width="50%" alt="Provision">
 
-### Deploy Contents 
+### Deploy Application Code 
 
 After coding some functions and creating Azure Logic App Standard workflows these can be deployed with another single command.
 
