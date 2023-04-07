@@ -1,0 +1,20 @@
+name: Azure DevOps Artifacts
+
+trigger:
+  - main
+  - master
+  - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: NuGetAuthenticate@0
+- script: dotnet pack src/model/model.csproj --output nupkgs
+  displayName: dotnet pack model
+- script: dotnet pack src/library/library.csproj --output nupkgs
+  displayName: dotnet pack library
+- script: dotnet nuget push --api-key az --skip-duplicate --source https://pkgs.dev.azure.com/$(ORG_NAME)/$(PROJECT_NAME)/_packaging/$(FEED_NAME)/nuget/v3/index.json nupkgs/*.nupkg
+  displayName: dotnet nuget push
+
