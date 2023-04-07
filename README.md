@@ -1,7 +1,7 @@
 # Integration hub. There can be only one!
 ## "You cannot die. Accept it!"
 
-This templates includes generic integration components like Api Management, Azure Service Bus and Azure Artifacts. 
+This template includes generic integration components like Api Management, Azure Service Bus and Azure Artifacts. 
 
 It can be used with one or more [**logicapp-standard-func**](https://github.com/marnixcox/logicapp-standard-func/) implementations.
 
