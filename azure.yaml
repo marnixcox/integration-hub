@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: integration-hub
+infra:
+  provider: "bicep"
+hooks:
+  postprovision:
+    windows: # Run referenced script that uses environment variables (script shown below)
+      shell: pwsh
+      run: .\scripts\nuget.ps1
+      interactive: true
+      continueOnError: false
