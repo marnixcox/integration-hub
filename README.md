@@ -52,7 +52,7 @@ The following folder structure is created.
 
 - Install [.NET framework 8](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer)
 - Install Powershell: `winget install Microsoft.PowerShell`
-- Set execution policy for Powershell: [set-executionpolicy remotesigned](https://www.centrel-solutions.com/media/xiaconfiguration/adminguideweb/PowerShellSetExecutionPolicy.html)
+- Set execution policy for Powershell: [set-executionpolicy remotesigned](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy) running the command as an administrator
 - Install [Azure Artifacts Credential Provider](https://github.com/marnixcox/integration-hub/blob/main/scripts/installcredprovider.ps1)
 
 
@@ -84,11 +84,10 @@ Resource group and all components will be created.
 
 <img src="assets/provision.png" width="50%" alt="Provision">
 
-### CI/CD
+### Deployment pipelines
 
 This template includes pipelines for a staged dev/tst/acc/prd deployment for a `develop` and `main` branch. Make sure to update the `serviceConnection` and  `AZURE_SUBSCRIPTION_ID` accordingly. 
 
-
-
+<img src="assets/cicd.png" width="75%" alt="Deployment">
 
 
