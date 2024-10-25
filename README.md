@@ -18,7 +18,7 @@ This template utilizes the following Azure resources:
 - [**Azure Key Vault**](https://docs.microsoft.com/azure/key-vault/) for securing secrets
 - [**Azure Service Bus**](https://docs.microsoft.com/azure/service-bus/) for (reliable) messaging
 - [**Azure Artifacts**](https://learn.microsoft.com/en-us/azure/devops/artifacts) for publishing libraries to
-- [**Azure Logic App Standard**](https://docs.microsoft.com/azure/logic-app-standard/) to host workflows
+- [**Azure Logic App Standard**](https://docs.microsoft.com/azure/logic-apps/) to host workflows
 
 
 ### How to get started
