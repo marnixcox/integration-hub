@@ -53,7 +53,7 @@ The following folder structure is created.
 - Install [.NET framework 8](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.204-windows-x64-installer)
 - Install Powershell: `winget install Microsoft.PowerShell`
 - Set execution policy for Powershell: [set-executionpolicy remotesigned](https://www.centrel-solutions.com/media/xiaconfiguration/adminguideweb/PowerShellSetExecutionPolicy.html)
-- Install [Azure Artifacts Credential Provider](.\scripts\installcredprovider.ps1)
+- Install [Azure Artifacts Credential Provider](https://github.com/marnixcox/integration-hub/blob/main/scripts/installcredprovider.ps1)
 
 
 ### Azure Artifacts 
