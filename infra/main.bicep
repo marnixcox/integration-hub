@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 @minLength(1)
-@maxLength(64)
+@maxLength(5)
 @description('Name of the the environment which is used to generate a short unique hash used in all resources.')
 param environmentName string
 
@@ -57,7 +57,7 @@ module keyVault './avm/key-vault/vault/main.bicep' = {
   name: 'keyvault'
   scope: rg
   params: {
-    name: !empty(keyVaultName) ? keyVaultName : '${abbrs.keyVaultVaults}${resourceToken}-hub-${environmentName}'
+    name: !empty(keyVaultName) ? keyVaultName : '${abbrs.keyVaultVaults}${resourceToken}hub${environmentName}'
     location: location
     sku: 'standard'
     enablePurgeProtection: false
