@@ -16,7 +16,5 @@ namespace Integration.Model.Employee
         public string Number { get; set; }
         public string Name { get; set; }
     }
-
-   
 }
 

@@ -5,7 +5,7 @@ This template includes generic integration components like a shared Logic App St
 
 It can be used together with one or more [**logicapp-standard-func**](https://github.com/marnixcox/logicapp-standard-func/) implementations to implement an application integration platform.
 
-<img src="assets/hub.png" width="50%" alt="Deploy">
+<img src="assets/hub.png" width="25%" alt="Deploy">
 
 
 ### Application architecture
@@ -37,9 +37,7 @@ The following folder structure is created.
 ```
 ├── infra                      [ Infrastructure As Code files ]
 │   ├── main.bicep             [ Main infrastructure file ]
-│   ├── main.parameters.json   [ Parameters file ]
-│   ├── avm                    [ Azure Verified Modules ]
-│   └── core                   [ Full set of infra files provided by Azure Developer CLI team ]
+│   └── main.parameters.json   [ Parameters file ]
 ├── scripts                    [ Scripts to package and publish NuGet packages ]
 ├── src                        [ Application code ]
 │   ├── model                  [ NuGet package for (service bus) message definitions ]
@@ -47,6 +45,13 @@ The following folder structure is created.
 └── azure.yaml                 [ Describes the app and type of Azure resources ]
 
 ```
+
+### Key Infrastructure Files
+- `main.bicep` - Main orchestration
+- `monitoring.bicep` - Observability stack
+- `logicappplan.bicep` - Logic App Service hosting  
+- `keyvault.bicep` - Key Vault
+- `servicebus.bicep` - Service Bus
 
 ### Prerequisites
 
@@ -63,6 +68,8 @@ First configure [**Azure Artifacts**](https://learn.microsoft.com/en-us/azure/de
 `$env:ORG_NAME`
 `$env:PROJECT_NAME`
 `$env:FEED_NAME`
+
+This script will run locally during development after `azd provision`. This will be skipped in the DevOps pipelines as they run in ubuntu. 
 
 ### Provision Infrastructure 
 
@@ -86,8 +93,10 @@ Resource group and all components will be created.
 
 ### Deployment pipelines
 
-This template includes pipelines for a staged dev/tst/acc/prd deployment for a `develop` and `main` branch. Make sure to update the `serviceConnection` and  `AZURE_SUBSCRIPTION_ID` accordingly. 
+This template includes pipelines for a `build once, deploy everywhere` pattern. Make sure to update the `serviceConnection` and  `AZURE_SUBSCRIPTION_ID` accordingly. 
 
-<img src="assets/cicd.png" width="75%" alt="Deployment">
-
-
+- `main.yml` - Branch trigger 
+- `validate.yml` - Validate infra code
+- `package.yml` - Package src code
+- `provision.yml` - Provision infra
+- `deploy.yml` - Deploy src
