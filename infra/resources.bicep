@@ -25,7 +25,7 @@ module monitoring './monitoring.bicep' = {
 }
 
 // KeyVault 
-module keyvault './keyvault.bicep' = {
+module keyvault './keyvault/keyvault.bicep' = {
   name: '${deployment().name}-keyvault'
   params: {
     location: location
@@ -38,7 +38,7 @@ module keyvault './keyvault.bicep' = {
 }
 
 // Service Bus 
-module servicebus './servicebus.bicep' = {
+module servicebus './servicebus/servicebus.bicep' = {
   name: '${deployment().name}-servicebus'
   params: {
     location: location
@@ -51,7 +51,7 @@ module servicebus './servicebus.bicep' = {
 }
 
 // Logic App Standard Plan
-module logicappplan './logicappplan.bicep' = {
+module logicappplan './logicapp/plan.bicep' = {
   name: '${deployment().name}-logicappplan'
   params: {
     location: location

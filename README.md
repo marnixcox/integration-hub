@@ -36,6 +36,9 @@ The following folder structure is created.
 
 ```
 ├── infra                      [ Infrastructure As Code files ]
+│   ├── keyvault               [ Key Vault files ]
+│   ├── logicapp               [ Logic app files ]
+│   ├── servicebus             [ Servicebus files ]
 │   ├── main.bicep             [ Main infrastructure file ]
 │   └── main.parameters.json   [ Parameters file ]
 ├── scripts                    [ Scripts to package and publish NuGet packages ]
@@ -47,11 +50,13 @@ The following folder structure is created.
 ```
 
 ### Key Infrastructure Files
+- `keyvault/keyvault.bicep` - Key Vault
+- `logicapp/plan.bicep` - Logic App Plan 
+- `servicebus/servicebus.bicep` - Service Bus
 - `main.bicep` - Main orchestration
 - `monitoring.bicep` - Observability stack
-- `logicappplan.bicep` - Logic App Service hosting  
-- `keyvault.bicep` - Key Vault
-- `servicebus.bicep` - Service Bus
+- `resources.bicep` - Resource collection
+
 
 ### Prerequisites
 
